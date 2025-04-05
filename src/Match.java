@@ -25,9 +25,11 @@ public class Match {
         System.out.println("Goles del equipo 1: " + goals_team_1);
         System.out.println("Goles del equipo 2: " + goals_team_2);
         System.out.println("Total de goles en el partido: " + totalGoals);
+        System.out.println("\n-------------------------");
     }
 
     public String winTeam(){
+        System.out.println("\n-------------------------");
         if (goal_team_1 > goal_team_2){
             return "Equipo 1 es ganador";
         }else if(goal_team_2 > goal_team_1){
@@ -44,5 +46,6 @@ public class Match {
         System.out.println("Equipo 2: " + team_2);
         System.out.println("Goles Equipo 2: " + goal_team_2);
         System.out.println("Resultado: " + winTeam());
+        System.out.println("\n-------------------------");
     }
 }

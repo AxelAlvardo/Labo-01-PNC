@@ -1,6 +1,11 @@
+import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
+        Menu menu = new Menu();
+        Match match = new Match(List.of("Jugador 1", "Jugador 2"),List.of("Jugador 3", "Jugador 4"),0,0);
+        menu.executeOption(match);
 
         GestorJugadores gestor = new GestorJugadores();
         gestor.agregarJugador(1, "Neymar Jr.", 6, 4);
@@ -13,22 +18,6 @@ public class App {
         gestor.agregarJugador(8, "Virgil van Dijk", 1, 5);
         gestor.agregarJugador(9, "Luka Modrić", 4, 4);
         gestor.agregarJugador(10, "Sergio Ramos", 2, 5);
-
-
-
-        System.out.println("Lista de Jugadores:");
-        for (Jugador jugador : gestor.getJugadores()) {
-            System.out.println(jugador);
-        }
-        System.out.println("\nJugadores con más de 5 goles:");
-        for (Jugador jugador : gestor.jugadoresConMasDe5Goles()) {
-            System.out.println(jugador);
-        }
-
-
-        
-
-
 
     }
 }
