@@ -3,9 +3,9 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Menu menu = new Menu();
         Match match = new Match(List.of("Jugador 1", "Jugador 2"),List.of("Jugador 3", "Jugador 4"),0,0);
-        menu.executeOption(match);
+        Menu menu = new Menu();
+    
 
         GestorJugadores gestor = new GestorJugadores();
         gestor.agregarJugador(1, "Neymar Jr.", 6, 4);
@@ -19,5 +19,8 @@ public class App {
         gestor.agregarJugador(9, "Luka Modrić", 4, 4);
         gestor.agregarJugador(10, "Sergio Ramos", 2, 5);
 
+        menu.executeOption(match, gestor);
+
     }
+ 
 }
