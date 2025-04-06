@@ -1,13 +1,12 @@
-import java.util.List;
 
 public class Match {
 
-    private List<String> team_1;
-    private List<String> team_2;
+    private Team team_1;
+    private Team team_2;
     private int goal_team_1;
     private int goal_team_2;
     
-    public Match(List<String> team_1, List<String> team_2, int goal_team_1, int goal_team_2) {
+    public Match(Team team_1, Team team_2, int goal_team_1, int goal_team_2) {
         this.team_1 = team_1;
         this.team_2 = team_2;
         this.goal_team_1 = 0;
@@ -22,8 +21,8 @@ public class Match {
         int totalGoals = goals_team_1 + goals_team_2;
 
         System.out.println("\n--- Registro de Goles ---");
-        System.out.println("Goles del equipo 1: " + goals_team_1);
-        System.out.println("Goles del equipo 2: " + goals_team_2);
+        System.out.println("Goles del equipo "  +  team_1.getName() + " :" + goals_team_1);
+        System.out.println("Goles del equipo "  + team_2.getName() + " :" + goals_team_2);
         System.out.println("Total de goles en el partido: " + totalGoals);
         System.out.println("\n-------------------------");
     }
@@ -31,9 +30,9 @@ public class Match {
     public String winTeam(){
         System.out.println("\n-------------------------");
         if (goal_team_1 > goal_team_2){
-            return "Equipo 1 es ganador";
+            return "Equipo " + team_1.getName() + " :" + "es el ganador";
         }else if(goal_team_2 > goal_team_1){
-            return "Equipo 1 es ganador";
+            return "Equipo " + team_2.getName() + " :" + "es el ganador";
         }else{
             return "Hubo un empate";
         }
@@ -41,10 +40,10 @@ public class Match {
 
     public void showDetails() {
         System.out.println("\n--- Detalles del Partido ---");
-        System.out.println("Equipo 1: " + team_1);
-        System.out.println("Goles Equipo 1: " + goal_team_1);
-        System.out.println("Equipo 2: " + team_2);
-        System.out.println("Goles Equipo 2: " + goal_team_2);
+        System.out.println("Equipo" + team_1.getName());
+        System.out.println("Goles Equipo" + team_1.getName() + " :" + goal_team_1);
+        System.out.println("Equipo" + team_2.getName());
+        System.out.println("Goles Equipo"  + team_2.getName() + " :" + goal_team_2);
         System.out.println("Resultado: " + winTeam());
         System.out.println("\n-------------------------");
     }

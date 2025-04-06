@@ -1,12 +1,8 @@
-import java.util.List;
-
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Match match = new Match(List.of("Jugador 1", "Jugador 2"),List.of("Jugador 3", "Jugador 4"),0,0);
         Menu menu = new Menu();
     
-
         GestorJugadores gestor = new GestorJugadores();
         gestor.agregarJugador(1, "Neymar Jr.", 6, 4);
         gestor.agregarJugador(2, "Kylian Mbappé", 7, 3);
@@ -19,6 +15,10 @@ public class App {
         gestor.agregarJugador(9, "Luka Modrić", 4, 4);
         gestor.agregarJugador(10, "Sergio Ramos", 2, 5);
 
+        Team team_1 = new Team("Los Java", gestor.getJugadores().subList(0, 5));
+        Team team_2 = new Team("Los Springboot", gestor.getJugadores().subList(5, 10));
+
+        Match match = new Match(team_1,team_2,0,0);
         menu.executeOption(match, gestor);
 
     }

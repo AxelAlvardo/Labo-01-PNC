@@ -102,7 +102,7 @@ public class Menu {
     
                 case 7:
                     System.out.println("Has salido del sistema");
-                    break;
+                    return;
     
                 default:
                     System.out.println("Opcion no valida");
