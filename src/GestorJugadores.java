@@ -22,6 +22,24 @@ public class GestorJugadores {
                         .filter(jugador -> jugador.getcantidadGolesMarcados() > 5)
                         .collect(Collectors.toList());
     }
-
-
+    
+    public Jugador topJugadoresPorTemporada() {
+        if (jugadores.isEmpty()) return null;
+        Jugador top = jugadores.get(0);
+        for (Jugador j : jugadores) {
+            if (j.getcantidadGolesMarcados() > top.getcantidadGolesMarcados()) {
+                top = j;
+            }
+        }
+        return top;
+    }
+    
+    public Jugador buscarJugadorPorId(int id) {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getId() == id) {
+                return jugador;
+            }
+        }
+        return null;
+    }
 }
